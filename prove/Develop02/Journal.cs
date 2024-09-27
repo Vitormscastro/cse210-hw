@@ -10,11 +10,18 @@ using System;
 
 public class Journal
 {
-        public List<Entry> _entries = new List<Entry>();
+        public List<Entry> _entries;
 
-        public void AddEntry(newEntry)
+        public void AddEntry(Entry newEntry)
         {
+                DateTime theCurrentTime = DateTime.Now;
+                newEntry._date = theCurrentTime.ToShortDateString();
 
+                PromptGenerator newGenerator = new PromptGenerator();
+                newEntry._promptText = newGenerator.GetRandomPrompt();
+
+                Console.WriteLine(newEntry._promptText);
+                newEntry._entryText = Console.ReadLine();
         }
 
         public void DisplayAll()
@@ -22,12 +29,12 @@ public class Journal
 
         }
 
-        public void SaveToFile(file)
+        public void SaveToFile(string file)
         {
 
         }
 
-        public void LoadFromFile(file)
+        public void LoadFromFile(string file)
         {
                 
         }
