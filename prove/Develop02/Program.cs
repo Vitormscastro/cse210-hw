@@ -1,5 +1,9 @@
 using System;
 
+//   To exceed requirements, I created a new behavior in the Journal class that allows the
+// program save each line from a loaded file as a new entry. This allows the "AddEntry"
+// behavior to be more concise and specific for writing a new entry.
+
 class Program
 {
     static void Main(string[] args)
@@ -19,23 +23,22 @@ class Program
             {
                 Entry newEntry = new Entry();
                 theJournal.AddEntry(newEntry);
-                newEntry.Display();
             }
             else if (run == "2")
             {
-                
+                theJournal.DisplayAll();
             }
             else if (run == "3")
             {
-                /*Console.Write("What file would you like to save to? ");
+                Console.Write("What file would you like to save to? ");
                 file = Console.ReadLine();
-                Journal.SaveToFile(file);*/
+                theJournal.SaveToFile(file);
             }
             else if (run == "4")
             {
-                /*Console.Write("What file would you like to load from? ");
+                Console.Write("What file would you like to load from? ");
                 file = Console.ReadLine();
-                Journal.LoadFromFile(file);*/
+                theJournal.LoadFromFile(file);
             }
         } while (run != "5");
     }

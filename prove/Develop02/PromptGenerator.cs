@@ -7,13 +7,13 @@ using System;
 
 public class PromptGenerator
 {
-        public List<string> _prompts;
+        public List<string> _prompts = new List<string>();
 
         public string GetRandomPrompt()
         {
                 _prompts.Add("Who was the most interesting person I interacted with today?");
                 _prompts.Add("What made me happiest today?");
-                _prompts.Add("How did the Lord bless today?");
+                _prompts.Add("How did the Lord bless me today?");
                 _prompts.Add("What moment would I want to always remember from today?");
                 _prompts.Add("What is something I could improve on?");
 
