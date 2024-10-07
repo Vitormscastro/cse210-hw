@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 public class Reference
 {
@@ -9,16 +11,25 @@ public class Reference
 
     public Reference(string book, int chapter, int verse)
     {
-
+        _book = book;
+        _chapter = chapter;
+        _verse = verse;
+        _endVerse = verse;
     }
 
     public Reference(string book, int chapter, int verse, int endVerse)
     {
-
+        _book = book;
+        _chapter = chapter;
+        _verse = verse;
+        _endVerse = endVerse;
     }
 
     public string GetDisplayText()
     {
-        return "";
+        if (_verse == _endVerse)
+            return $"{_book} {_chapter}:{_verse}";
+        else
+            return $"{_book} {_chapter}:{_verse}-{_endVerse}";    
     }
 }
