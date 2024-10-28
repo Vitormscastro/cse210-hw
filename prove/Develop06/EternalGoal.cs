@@ -1,14 +1,15 @@
-using System;
-
 public class EternalGoal : Goal  
 {  
+    public EternalGoal() : base("", "", 0)  
+    {  
+    }
     public EternalGoal(string name, string description, int points) : base(name, description, points)  
     {  
     }  
 
     public override void RecordEvent()  
     {  
-        // Implementation goes here  
+        // No specific implementation needed for eternal goals  
     }  
 
     public override bool IsComplete()  
@@ -20,4 +21,9 @@ public class EternalGoal : Goal
     {  
         return $"{ShortName}: {Description} - Points: {Points}";  
     }  
-}  
+
+    public override string GetDetailsString()  
+    {  
+        return $"[ ] {ShortName}: {Description}";  
+    }  
+}

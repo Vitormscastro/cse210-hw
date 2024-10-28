@@ -1,10 +1,10 @@
-using System;
-
 public abstract class Goal  
 {  
-    protected string ShortName; 
-    protected string Description;
-    protected int Points;
+    public string ShortName { get; set; }  
+    public string Description { get; set; }  
+    public int Points { get; set; }  
+
+    protected Goal() { } // Parameterless constructor for serialization  
 
     public Goal(string name, string description, int points)  
     {  
@@ -17,4 +17,4 @@ public abstract class Goal
     public abstract bool IsComplete();  
     public abstract string GetDetailsString();  
     public abstract string GetStringRepresentation();  
-}  
+}

@@ -1,8 +1,11 @@
-using System;
-
 public class SimpleGoal : Goal  
 {  
-    private bool IsCompleteFlag;
+    private bool IsCompleteFlag { get; set; }  
+
+    public SimpleGoal() : base("", "", 0)  
+    {  
+        IsCompleteFlag = false;  
+    } 
 
     public SimpleGoal(string name, string description, int points) : base(name, description, points)  
     {  
@@ -11,7 +14,7 @@ public class SimpleGoal : Goal
 
     public override void RecordEvent()  
     {  
-        // Implementation goes here  
+        IsCompleteFlag = true;  
     }  
 
     public override bool IsComplete()  
@@ -23,4 +26,9 @@ public class SimpleGoal : Goal
     {  
         return $"{ShortName}: {Description} - Points: {Points}";  
     }  
-}  
+
+    public override string GetDetailsString()  
+    {  
+        return IsComplete() ? $"[X] {ShortName}: {Description}" : $"[ ] {ShortName}: {Description}";  
+    }  
+}
